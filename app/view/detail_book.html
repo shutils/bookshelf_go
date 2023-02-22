@@ -1,0 +1,24 @@
+{{ define "detail_book" }}
+{{ template "header" }}
+<div class="p-3">
+    <div class="card">
+        <div class="card-body">
+            <h5 class="card-title">{{ .Title }}</h5>
+        </div>
+        <input id="deleteBtn" class="btn btn-danger" type="submit" value="削除">
+    </div>
+</div>
+
+<script>
+    const deleteBtn = document.getElementById("deleteBtn")
+    deleteBtn.addEventListener("click", async () => {
+        if (confirm("削除しますか?")) {
+            await fetch("/book/{{.ID}}", { method: "DELETE" }).then(() => {
+                alert("削除しました");
+                window.location.href = "/book";
+            })
+        }
+    })
+</script>
+{{ template "footer" }}
+{{ end }}
