@@ -1,0 +1,9 @@
+{{ define "create_book" }}
+{{ template "header" }}
+<form class="p-3" action="" method="post">
+    <label class="form-label" for="title">タイトル</label>
+    <input class="form-control" type="text" name="title" id="title" required>
+    <input class="btn btn-primary mt-2" type="submit" value="送信">
+</form>
+{{ template "footer" }}
+{{ end }}

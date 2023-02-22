@@ -1,0 +1,9 @@
+{{ define "book" }}
+{{ template "header" }}
+<ul class="list-group m-3">
+    {{ range . }}
+    <li class="list-group-item d-flex justify-content-between"><span>{{ .Title}}</span><a href="/book/{{ .ID}}">詳細</a></li>
+    {{ end }}
+</ul>
+{{ template "footer" }}
+{{ end }}
